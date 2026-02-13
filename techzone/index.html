@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>O Sistema de Portaria da "TechZone"</h1>
+    <input type="text" id="nomeInput" placeholder="Digite seu nome">
+    <input type="text" id="horaInput" placeholder="Digite a hora">
+    <button onclick="verificarAcesso()">Verificar Acesso</button>
+
+    <script>
+
+        let autorizados = ["Ana", "Carlos", "Marta", "João"]
+
+        function verificarAcesso() {
+            let nome = document.getElementById("nomeInput").value;
+            let hora = parseInt(document.getElementById("horaInput").value);
+
+            if (autorizados.includes(nome) && hora <= 22) {
+                alert("Acesso permitido. Bem-vindo à TechZone!");
+            } else {
+                alert("Acesso negado. Você não tem permissão para entrar ou está fora do horário permitido.");
+            }
+        }
+
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</body>
+</html>
